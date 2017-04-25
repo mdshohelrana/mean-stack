@@ -12,11 +12,16 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './_common/layout/home/home.component';
 import { AboutComponent } from './_common/layout/about/about.component';
 
+import { EmployeeComponent } from './hrm/components/employee.component';
+import { EmployeeViewComponent } from './hrm/components/employee-view.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    EmployeeComponent,
+    EmployeeViewComponent
   ],
   imports: [
     BrowserModule,

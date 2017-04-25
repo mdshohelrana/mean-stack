@@ -7,9 +7,9 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 
 @Component({
   selector: 'employee',
-  templateUrl: '../templates/employee.component.html',  
+  templateUrl: '../templates/employee-view.component.html'  
 })
-export class EmployeeComponent implements OnInit {
+export class EmployeeViewComponent implements OnInit {
 
   constructor() { }
   
