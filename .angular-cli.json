@@ -9,7 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "assets/favicon.ico"
+        "favicon.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -20,15 +20,13 @@
       "prefix": "app",
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "../node_modules/font-awesome/css/font-awesome.min.css",
-		"../node_modules/ng2-toastr/bundles/ng2-toastr.min.css",
+        "../node_modules/font-awesome/css/font-awesome.min.css",	
         "assets/css/styles.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/tether/dist/js/tether.min.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
-		"../node_modules/ng2-toastr/bundles/ng2-toastr.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js",		
 		"assets/js/vendors/ie10-viewport-bug-workaround.js"
       ],
       "environmentSource": "environments/environment.ts",

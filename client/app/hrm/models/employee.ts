@@ -1,4 +1,5 @@
 export interface IEmployee {
+  id: number,
   firstName: string;
   lastName: string;
   fullName: string;
@@ -8,8 +9,9 @@ export interface IEmployee {
   bio: string
 }
 
-export class Employee extends IEmployee {
+export class Employee {
   private _fullName: string;
+  id: number;
   firstName: string;
   lastName: string;
   fullName: string;
@@ -19,6 +21,7 @@ export class Employee extends IEmployee {
   bio: string
 
   constructor() {
+    this.id = 0;
     this.firstName = null;
     this.lastName = null;
     this.fullName = null;

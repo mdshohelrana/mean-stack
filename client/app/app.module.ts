@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ErrorHandler, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -32,7 +32,7 @@ import { EmployeeViewComponent } from './hrm/components/employee-view.component'
   providers: [{
     provide: ErrorHandler, useClass: AppErrorHandler
   }],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  //schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
