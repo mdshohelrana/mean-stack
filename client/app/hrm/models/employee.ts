@@ -10,7 +10,8 @@ export interface IEmployee {
 }
 
 export class Employee {
-  private _fullName: string;
+  private _firstName: string;
+  private _lastName: string;
   id: number;
   firstName: string;
   lastName: string;
@@ -31,16 +32,21 @@ export class Employee {
     this.bio = null;
   }
 
-  get fullName(): string {
-    return this._fullName;
+  get firstName(): string {
+    return this._firstName;
   }
 
-  set fullName(value: string) {
-    if (value === null || value === undefined || value === '') {
-      this._fullName = null;
-    }
-    else {
-      this._fullName = this.firstName + ' ' + this.lastName;
-    }
+  set firstName(firstName: string) {
+    this._firstName = firstName;
+    this.fullName = this._firstName + ' ' + this._lastName;
+  }
+
+  get lastName(): string {
+    return this._lastName;
+  }
+
+  set lastName(lastName: string) {
+    this._lastName = lastName;
+    this.fullName = this._firstName + ' ' + this._lastName;
   }
 } 

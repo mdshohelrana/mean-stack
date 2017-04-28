@@ -24,7 +24,7 @@
 					Name: </label>
 				<div class="col-md-8">
 					<input type="text" class="form-control" name="fullName"
-						placeholder="Full Name" required [(ngModel)]="model.fullName">
+						placeholder="Full Name" disabled="disabled" required [(ngModel)]="model.fullName">
 				</div>
 			</div>
 			<div class="form-group row">
@@ -32,7 +32,7 @@
 				</label>
 				<div class="col-md-8">
 					<select class="form-control" required [(ngModel)]="model.title"
-						name="title">
+						name="title">						
 						<option *ngFor="let tit of titleList" [value]="tit.value">{{tit.text}}</option>
 					</select>
 				</div>
