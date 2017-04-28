@@ -24,15 +24,16 @@
 					Name: </label>
 				<div class="col-md-8">
 					<input type="text" class="form-control" name="fullName"
-						placeholder="Full Name" disabled="disabled" required [(ngModel)]="model.fullName">
+						placeholder="Full Name" readonly="readonly" required
+						[(ngModel)]="model.fullName">
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="inputPassword3" class="col-md-4 col-form-label">Title:
 				</label>
 				<div class="col-md-8">
-					<select class="form-control" required [(ngModel)]="model.title"
-						name="title">						
+					<select class="form-control" required [(ngModel)]="model.titleId"
+						name="title">
 						<option *ngFor="let tit of titleList" [value]="tit.value">{{tit.text}}</option>
 					</select>
 				</div>
@@ -41,8 +42,9 @@
 				<label for="inputPassword3" class="col-md-4 col-form-label">Date
 					of birth: </label>
 				<div class="col-md-8">
-					<input type="date" class="form-control" name="dateOfBirth"
-						placeholder="Date of birth" required [(ngModel)]="model.dateOfBirth">
+					<input class="form-control" required [ngModel]="model.dateOfBirth | date:'yyyy-MM-dd'"
+						(ngModelChange)="model.dateOfBirth = $event" type="date"
+						name="dateOfBirth" />
 				</div>
 			</div>
 			<div class="form-group row">
@@ -64,8 +66,8 @@
 			<div class="form-group row">
 				<div class="offset-md-4 col-md-8 ">
 					<div class="btn-group" role="group" aria-label="Basic example">
-						<button type="submit" class="btn btn-primary" (click) = "addEmployee()"
-							[disabled]="!employeeForm.form.valid">Save</button>
+						<button type="submit" class="btn btn-primary"
+							(click)="addEmployee()" [disabled]="!employeeForm.form.valid">Save</button>
 					</div>
 					<div class="btn-group" role="group" aria-label="Basic example">
 						<button type="button" class="btn btn-danger"

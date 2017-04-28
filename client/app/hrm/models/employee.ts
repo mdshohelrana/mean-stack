@@ -26,8 +26,8 @@ export class Employee {
     this.firstName = null;
     this.lastName = null;
     this.fullName = null;
-    this.titleId = 0;
-    this.dateOfBirth = new Date();
+    this.titleId = 1;//default value
+    this.dateOfBirth = new Date('06-21-1985');
     this.address = null;
     this.bio = null;
   }
