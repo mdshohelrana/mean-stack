@@ -11,8 +11,8 @@ import { EmployeeViewComponent } from './hrm/components/employee-view.component'
 const routes: Routes = [
   { path: '', redirectTo: '/employee', pathMatch: 'full' },//default route
   { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent }
-  { path: 'employee', component: EmployeeComponent }
+  { path: 'about', component: AboutComponent },
+  { path: 'employee', component: EmployeeComponent },
   { path: 'employee-view', component: EmployeeViewComponent }
 ];
 
