@@ -12,9 +12,7 @@ export interface IEmployee {
 export class Employee {
   private _firstName: string;
   private _lastName: string;
-  id: number;
-  firstName: string;
-  lastName: string;
+  id: number;  
   fullName: string;
   titleId: number;
   dateOfBirth: Date;

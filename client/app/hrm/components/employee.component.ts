@@ -15,6 +15,9 @@ export class EmployeeComponent implements OnInit {
   titleList = [{ value: 1, text: "Mr" }, { value: 2, text: "Miss" }, { value: 3, text: "Mrs" }];
   model = new Employee();
 
+  // constructor(private http: Http,
+  //   private dataService: DataService) { }
+
   ngOnInit(): void {
 
   }
@@ -24,12 +27,12 @@ export class EmployeeComponent implements OnInit {
     // this.dataService.addEmployee(this.model).subscribe(
     //   res => {
     //     this.resetEmployee();
-    //     this.employeeForm.reset();
+    //     //this.employeeForm.reset();
     //     //this.toast.setMessage('item added successfully.', 'success');
     //   },
     //   error => console.log(error)
     // );
-    console.log("employee added");
+    // console.log("employee added");
   }
 
   resetEmployee(): void {
