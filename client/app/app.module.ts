@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule, ErrorHandler, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -15,6 +15,10 @@ import { AboutComponent } from './_common/layout/about/about.component';
 import { EmployeeComponent } from './hrm/components/employee.component';
 import { EmployeeViewComponent } from './hrm/components/employee-view.component';
 
+//app services
+import { DataService } from './_common/services/common.base-data.service';
+import { EmployeeService } from './hrm/services/employee.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,10 +33,10 @@ import { EmployeeViewComponent } from './hrm/components/employee-view.component'
     HttpModule,
     AppRoutingModule
   ],
-  providers: [{
+  providers: [DataService, EmployeeService, {
     provide: ErrorHandler, useClass: AppErrorHandler
   }],
-  //schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

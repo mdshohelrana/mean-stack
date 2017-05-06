@@ -5,7 +5,6 @@ import * as mongoose from 'mongoose';
 import * as path from 'path';
 
 import config from './config/db';
-import Cat from './models/employee.model';
 import setRoutes from './routes';
 
 const app = express();
@@ -29,6 +28,7 @@ db.once('open', () => {
   setRoutes(app);
 
   app.get('/*', function(req, res) {
+    console.log("load index file");
     res.sendFile(path.join(__dirname, '../public/index.html'));
   });
 

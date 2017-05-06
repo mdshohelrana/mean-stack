@@ -4,29 +4,22 @@
 	<thead class="thead-inverse">
 		<tr>
 			<th>#</th>
-			<th>First Name</th>
-			<th>Last Name</th>
 			<th>Full Name</th>
+			<th>Date Of Birth</th>
+			<th>Address</th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<th scope="row">1</th>
-			<td>Mark</td>
-			<td>Otto</td>
-			<td>@mdo</td>
-		</tr>
-		<tr>
-			<th scope="row">2</th>
-			<td>Jacob</td>
-			<td>Thornton</td>
-			<td>@fat</td>
-		</tr>
-		<tr>
-			<th scope="row">3</th>
-			<td>Larry</td>
-			<td>the Bird</td>
-			<td>@twitter</td>
+		<tr *ngFor="let emp of employeeList; let i = index">
+			<th scope="row">{{i + 1}}</th>
+			<td>{{emp.fullName}}</td>
+			<td>{{emp.dateOfBirth | date: 'dd/MM/yyyy'}}</td>
+			<td>{{emp.address}}</td>
+			<td>
+				<button class="btn btn-sm btn-warning" (click)="editEmployee(emp)"><i class="fa fa-pencil"></i> Edit</button>
+				<button class="btn btn-sm btn-danger" (click)="deleteEmployee(emp)"><i class="fa fa-trash"></i> Delete</button>
+			</td>
 		</tr>
 	</tbody>
 </table>

@@ -12,27 +12,27 @@ export class DataService {
 
   constructor(private http: Http) { }
 
-  getEmployees(): Observable<any> {
-    return this.http.get('/api/employees').map(res => res.json());
+  getAll(url): Observable<any> {
+    return this.http.get(url).map(res => res.json());
   }
 
-  countEmployees(): Observable<any> {
-    return this.http.get('/api/employees/count').map(res => res.json());
+  count(url): Observable<any> {
+    return this.http.get(url).map(res => res.json());
   }
 
-  addEmployee(employee): Observable<any> {
-    return this.http.post('/api/employee', JSON.stringify(employee), this.options);
+  insert(url, employee): Observable<any> {
+    return this.http.post(url, JSON.stringify(employee), this.options);
   }
 
-  getEmployee(cat): Observable<any> {
-    return this.http.get(`/api/employee/${employee._id}`, this.options);
+  get(url): Observable<any> {
+    return this.http.get(url, this.options);
   }
 
-  editEmployee(cat): Observable<any> {
-    return this.http.put(`/api/employee/${employee._id}`, JSON.stringify(cat), this.options);
+  edit(url, employee): Observable<any> {
+    return this.http.put(url, JSON.stringify(employee), this.options);
   }
 
-  deleteEmployee(cat): Observable<any> {
-    return this.http.delete(`/api/employee/${employee._id}`, this.options);
+  delete(url): Observable<any> {
+    return this.http.delete(url, this.options);
   }
 }

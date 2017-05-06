@@ -1,19 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
-//import { DataService } from '../services/data.service';
+import { EmployeeService } from '../services/employee.service';
 //import { ToastComponent } from '../shared/toast/toast.component';
 
 @Component({
   selector: 'employee',
-  templateUrl: '../templates/employee-view.component.html'  
+  templateUrl: '../templates/employee-view.component.html'
 })
 export class EmployeeViewComponent implements OnInit {
 
-  constructor() { }
-  
-  ngOnInit() {
+  employeeList = [];
+  isLoading = true;
+
+  constructor(private employeeService: EmployeeService) { }
+
+  ngOnInit(): void {
+    this.getEmployees();
+  }
+
+  getEmployees() {
+    this.employeeService.getEmployees().subscribe(
+      data => this.employeeList = data,
+      error => console.log(error),
+      () => this.isLoading = false
+    );
+  }
+
+  editEmployee() {
+
+  }
+
+  deleteEmployee() {
 
   }
 }

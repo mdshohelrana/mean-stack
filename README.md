@@ -1,4 +1,4 @@
-# full-stack-angular2-nodejs-mongodb
+# Full Stack Angular2 Nodejs Mongodb
 This is full stack development project with angular 2 +, nodejs, expressjs, mongodb by [Angular CLI](https://github.com/angular/angular-cli) and [Angular IDE](https://www.genuitec.com/products/angular-ide/).
 
 This project uses the [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)):
@@ -15,6 +15,11 @@ This project uses the [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_
 1. Install [Node.js](https://nodejs.org) and [MongoDB](https://www.mongodb.com)
 2. Install Angular CLI: `npm i -g @angular/cli`
 3. From project root folder install all the dependencies: `npm i`
+
+## RUN
+1. Run `mongod` and `mongo` serices (If you get any error like connection faild, just create the folder C:\data\db)
+2. `npm run dev`: concurrently execute MongoDB, Angular build, TypeScript compiler and Express server.
+3. `npm run prod`: run the project with a production bundle and AOT compilation
 
 ### Author
 * [Shohel Rana](https://github.com/mdshohelrana)

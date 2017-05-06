@@ -12,7 +12,8 @@ export interface IEmployee {
 export class Employee {
   private _firstName: string;
   private _lastName: string;
-  id: number;  
+
+  id: number;
   fullName: string;
   titleId: number;
   dateOfBirth: Date;
@@ -34,8 +35,8 @@ export class Employee {
     return this._firstName;
   }
 
-  set firstName(firstName: string) {
-    this._firstName = firstName;
+  set firstName(fn: string) {
+    this._firstName = fn;
     this.fullName = this._firstName + ' ' + this._lastName;
   }
 
@@ -43,8 +44,8 @@ export class Employee {
     return this._lastName;
   }
 
-  set lastName(lastName: string) {
-    this._lastName = lastName;
+  set lastName(ln: string) {
+    this._lastName = ln;
     this.fullName = this._firstName + ' ' + this._lastName;
   }
 } 
