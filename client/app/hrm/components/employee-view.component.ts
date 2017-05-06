@@ -30,7 +30,15 @@ export class EmployeeViewComponent implements OnInit {
 
   }
 
-  deleteEmployee() {
-
+  deleteEmployee(employee) {
+    if (window.confirm('Are you sure you want to permanently delete this item?')) {
+      this.employeeService.deleteEmployee(employee).subscribe(
+        res => {
+          const pos = this.employeeList.map(elem => { return elem._id; }).indexOf(employee._id);
+          this.employeeList.splice(pos, 1);
+        },
+        error => console.log(error)
+      );
+    }
   }
 }
