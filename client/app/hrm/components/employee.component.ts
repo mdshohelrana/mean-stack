@@ -25,7 +25,7 @@ export class EmployeeComponent implements OnInit {
   }
 
   //add employee
-  saveEmployee(): void {
+  saveEmployee(): void {    
     if (this.employeeService.employeeId) {
       this.editEmployee(this.model);
     }
