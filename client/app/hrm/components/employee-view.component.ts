@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { EmployeeService } from '../services/employee.service';
 //import { ToastComponent } from '../shared/toast/toast.component';
@@ -12,7 +13,7 @@ export class EmployeeViewComponent implements OnInit {
   employeeList = [];
   isLoading = true;
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(private employeeService: EmployeeService, private router: Router) { }
 
   ngOnInit(): void {
     this.getEmployees();
@@ -26,8 +27,9 @@ export class EmployeeViewComponent implements OnInit {
     );
   }
 
-  editEmployee() {
-
+  editEmployee(employee) {
+    this.employeeService.employeeId = employee._id;
+    this.router.navigateByUrl('/employee');    
   }
 
   deleteEmployee(employee) {

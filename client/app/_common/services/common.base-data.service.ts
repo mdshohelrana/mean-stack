@@ -25,7 +25,7 @@ export class DataService {
   }
 
   get(url): Observable<any> {
-    return this.http.get(url, this.options);
+    return this.http.get(url).map(res => res.json());
   }
 
   edit(url, employee): Observable<any> {

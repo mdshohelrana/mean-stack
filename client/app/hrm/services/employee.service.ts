@@ -6,6 +6,8 @@ import { DataService } from '../../_common/services/common.base-data.service';
 @Injectable()
 export class EmployeeService {
 
+    public employeeId: string = null;
+
     constructor(private dataService: DataService) { }
 
     getEmployees(): Observable<any> {
@@ -20,8 +22,8 @@ export class EmployeeService {
         return this.dataService.insert('/api/employee', employee);
     }
 
-    getEmployee(employee): Observable<any> {
-        return this.dataService.get(`/api/employee/${employee._id}`);
+    getEmployee(id): Observable<any> {
+        return this.dataService.get(`/api/employee/${id}`);
     }
 
     editEmployee(employee): Observable<any> {

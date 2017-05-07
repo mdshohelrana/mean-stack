@@ -13,29 +13,62 @@ export class EmployeeComponent implements OnInit {
 
   titleList = [{ value: 1, text: "Mr" }, { value: 2, text: "Miss" }, { value: 3, text: "Mrs" }];
   model = new Employee();
+  isEnableEditing = false;
 
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
-
+    if (this.employeeService.employeeId) {
+      this.getEmlpoyeeById();
+      this.isEnableEditing = true;
+    }
   }
 
   //add employee
-  addEmployee(): void {
-    this.employeeService.addEmployee(this.model).subscribe(
+  saveEmployee(): void {
+    if (this.employeeService.employeeId) {
+      this.editEmployee(this.model);
+    }
+    else {
+      this.addEmployee(this.model);
+    }
+  }
+
+  addEmployee(employee): void {
+    this.employeeService.addEmployee(employee).subscribe(
       res => {
         this.resetEmployee();
-        //this.employeeForm.reset();
-        //this.toast.setMessage('item added successfully.', 'success');
+        //this.employeeForm.reset();        
       },
       error => console.log(error)
     );
     console.log("employee added");
   }
 
+  editEmployee(employee): void {
+    this.employeeService.editEmployee(employee).subscribe(
+      res => {
+        this.model = employee;
+      },
+      error => console.log(error)
+    );
+  }
+
   resetEmployee(): void {
     this.model = new Employee();
     console.log("reset");
+  }
+
+  getEmlpoyeeById(): void {
+    this.employeeService.getEmployee(this.employeeService.employeeId).subscribe(
+      data => this.mapEmployee(data),
+      error => console.log(error),
+      () => true
+    );
+  }
+
+  mapEmployee(emp) {
+    this.model = emp;
   }
 
 }
