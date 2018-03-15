@@ -1,27 +1,28 @@
 <app-loading [condition]="isLoading"></app-loading>
-
 <app-toast [message]="toast.message"></app-toast>
 
-<div class="card" *ngIf="!isLoading">
-  <h4 class="card-header">Account settings</h4>
-  <div class="card-block">
+<mat-card *ngIf="!isLoading">
+  <mat-card-header>Account settings</mat-card-header>
+  <mat-card-content>
     <form #accountForm="ngForm" (ngSubmit)="save(user)">
-      <div class="input-group">        
-        <input class="form-control" type="text" name="username" [(ngModel)]="user.username" placeholder="Username" required>
-      </div>
-      <div class="input-group">        
-        <input class="form-control" type="email" name="email" [(ngModel)]="user.email" placeholder="Email" required>
-      </div>
-      <div class="input-group">        
-        <select class="form-control" name="role" [(ngModel)]="user.role">
-          <option value="" disabled>Role</option>
-          <option value="hr">HR</option>
-          <option value="admin">Admin</option>
-        </select>
-      </div>
-      <button class="btn btn-primary" type="submit" [disabled]="!accountForm.form.valid">
-        <i class="fa fa-save"></i> Save
-      </button>
+
+         <mat-form-field>
+            <input matInput type="text" name="username" [(ngModel)]="user.username" placeholder="Username" required autofocus>            
+          </mat-form-field>
+    
+          <mat-form-field>
+              <input matInput type="email" name="email" [(ngModel)]="user.email" placeholder="Email" required>            
+          </mat-form-field>
+             
+          <mat-form-field>
+            <mat-select [(value)]="selected" name="role" [(ngModel)]="user.role" placeholder="Role" required>
+              <mat-option>None</mat-option>
+              <mat-option value="hr">HR</mat-option>
+              <mat-option value="admin">Admin</mat-option>
+            </mat-select>
+          </mat-form-field>
+    
+          <button mat-raised-button color="primary" type="submit" [disabled]="!accountForm.form.valid">Save</button>      
     </form>
-  </div>
-</div>
+  </mat-card-content>
+</mat-card>
