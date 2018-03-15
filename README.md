@@ -1,4 +1,4 @@
-# Full Stack Angular Nodejs Mongodb
+# MEAN Stack Angular Nodejs Mongodb
 This is full stack development project with angular5, nodejs, expressjs, mongodb by [Angular CLI](https://github.com/angular/angular-cli) and [Angular IDE](https://www.genuitec.com/products/angular-ide/).
 
 This project uses the [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)):
