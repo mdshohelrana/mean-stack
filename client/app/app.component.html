@@ -1,55 +1,61 @@
-<div class="container-fluid">
-    <nav _ngcontent-c1="" class="docs-navbar-header">
-        <mat-toolbar color="primary">
-            <mat-toolbar-row>
-                <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="mat-button" mat-button>
-                    <span class="mat-button-wrapper">
-                        <span>Home</span>
-                    </span>
-                </a>
-                <a routerLink="/employees" routerLinkActive="active" class="mat-button" mat-button *ngIf="auth.loggedIn && auth.isAdmin">
-                    <span class="mat-button-wrapper">
-                        <span>Employees</span>
-                    </span>
-                </a>
-                <a routerLink="/attendances" routerLinkActive="active" class="mat-button" mat-button *ngIf="auth.loggedIn && !auth.isAdmin">
-                    <span class="mat-button-wrapper">
-                        <span>Attendances</span>
-                    </span>
-                </a>
-                <a routerLink="/attendanceReport" routerLinkActive="active" class="mat-button" mat-button *ngIf="auth.loggedIn && !auth.isAdmin">
-                    <span class="mat-button-wrapper">
-                        <span>Attendances Report</span>
-                    </span>
-                </a>
-                <a routerLink="/login" class="mat-button" mat-button routerLinkActive="active" *ngIf="!auth.loggedIn">
-                    <span class="mat-button-wrapper">
-                        <span>Login</span>
-                    </span>
-                </a>
-                <a routerLink="/register" class="mat-button" mat-button routerLinkActive="active" *ngIf="!auth.loggedIn">
-                    <span class="mat-button-wrapper">
-                        <span>Register</span>
-                    </span>
-                </a>
-                <a routerLink="/account" class="mat-button" mat-button routerLinkActive="active" *ngIf="auth.loggedIn">
-                    <span class="mat-button-wrapper">
-                        <span>Account ({{auth.currentUser.username}})</span>
-                    </span>
-                </a>
-                <a routerLink="/admin" class="mat-button" mat-button routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin">
-                    <span class="mat-button-wrapper">
-                        <span>Admin</span>
-                    </span>
-                </a>
-                <a routerLink="/logout" class="mat-button" mat-button routerLinkActive="active" *ngIf="auth.loggedIn">
-                    <span class="mat-button-wrapper">
-                        <span>Logout</span>
-                    </span>
-                </a>
-            </mat-toolbar-row>
-        </mat-toolbar>
-    </nav>
-    <router-outlet></router-outlet>
-
-</div>
+<ng-container>
+    <mat-toolbar color="primary" class="app-header">
+        <mat-toolbar-row>
+            <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="mat-button" mat-button>
+                <span class="mat-button-wrapper">
+                    <mat-icon>home</mat-icon>
+                    <span>Home</span>
+                </span>
+            </a>
+            <a routerLink="/employees" routerLinkActive="active" class="mat-button" mat-button *ngIf="auth.loggedIn && auth.isAdmin">
+                <span class="mat-button-wrapper">
+                    <span>Employees</span>
+                </span>
+            </a>
+            <a routerLink="/attendances" routerLinkActive="active" class="mat-button" mat-button *ngIf="auth.loggedIn && !auth.isAdmin">
+                <span class="mat-button-wrapper">
+                    <span>Attendances</span>
+                </span>
+            </a>
+            <a routerLink="/attendanceReport" routerLinkActive="active" class="mat-button" mat-button *ngIf="auth.loggedIn && !auth.isAdmin">
+                <span class="mat-button-wrapper">
+                    <span>Attendances Report</span>
+                </span>
+            </a>
+            <a routerLink="/login" class="mat-button" mat-button routerLinkActive="active" *ngIf="!auth.loggedIn">
+                <span class="mat-button-wrapper">
+                    <span>Login</span>
+                </span>
+            </a>
+            <a routerLink="/register" class="mat-button" mat-button routerLinkActive="active" *ngIf="!auth.loggedIn">
+                <span class="mat-button-wrapper">
+                    <span>Register</span>
+                </span>
+            </a>
+            <a routerLink="/account" class="mat-button" mat-button routerLinkActive="active" *ngIf="auth.loggedIn">
+                <span class="mat-button-wrapper">
+                    <span>Account ({{auth.currentUser.username}})</span>
+                </span>
+            </a>
+            <a routerLink="/admin" class="mat-button" mat-button routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin">
+                <span class="mat-button-wrapper">
+                    <span>Admin</span>
+                </span>
+            </a>
+            <a routerLink="/logout" class="mat-button" mat-button routerLinkActive="active" *ngIf="auth.loggedIn">
+                <span class="mat-button-wrapper">
+                    <span>Logout</span>
+                </span>
+            </a>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-sidenav-container class="app-container">
+        <router-outlet></router-outlet>
+    </mat-sidenav-container>
+    <mat-toolbar color="primary" class="app-footer">
+        <div class="navbar-text m-auto">
+            Made with
+            <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>️ by shohel rana
+        </div>
+    </mat-toolbar>
+</ng-container>

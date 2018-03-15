@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.css";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
 .mat-header-cell {
     font-size: inherit;
 }
@@ -11,18 +11,41 @@
     width: 100%;
 }
 
-.mat-checkbox-checked.mat-accent .mat-checkbox-background,
-.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
-    background-color: #007bff !important;
-}
-
-.mat-ripple-element {
-    background: rgba(27, 142, 241, .4) !important;
-}
-
-.mat-card-header-text{
+.mat-card-header-text {
     margin: 0px !important;
 }
 
+a:hover {
+    color: inherit;
+    text-decoration: none;
+}
 
+.app-container {
+    position: absolute;
+    top: 60px;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+}
 
+.app-sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    background: rgba(255, 0, 0, 0.5);
+}
+
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.app-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
