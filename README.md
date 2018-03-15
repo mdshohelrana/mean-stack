@@ -1,13 +1,14 @@
-# Full Stack Angular2 Nodejs Mongodb
-This is full stack development project with angular 2 +, nodejs, expressjs, mongodb by [Angular CLI](https://github.com/angular/angular-cli) and [Angular IDE](https://www.genuitec.com/products/angular-ide/).
+# Full Stack Angular Nodejs Mongodb
+This is full stack development project with angular5, nodejs, expressjs, mongodb by [Angular CLI](https://github.com/angular/angular-cli) and [Angular IDE](https://www.genuitec.com/products/angular-ide/).
 
 This project uses the [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)):
 * [**M**ongoose.js](http://www.mongoosejs.com) ([MongoDB](https://www.mongodb.com)): database
 * [**E**xpress.js](http://expressjs.com): backend framework
-* [**A**ngular 4](https://angular.io): frontend framework
+* [**A**ngular 5](https://angular.io): frontend framework
+* [**A**ngular Material](https://material.angular.io): frontend framework
 * [**N**ode.js](https://nodejs.org): runtime environment
 * [Angular CLI](https://cli.angular.io): project scaffolding
-* [Bootstrap4](https://v4-alpha.getbootstrap.com/): layout and styles
+* [Bootstrap4](https://getbootstrap.com/docs/4.0/getting-started/introduction/): layout and styles
 * [Font Awesome](http://fontawesome.io): icons
 * [ng2-toastr](https://github.com/PointInside/ng2-toastr): toastr
 
