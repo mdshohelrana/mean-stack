@@ -1,0 +1,35 @@
+<app-loading [condition]="isLoading"></app-loading>
+<mat-card>
+  <mat-card-header>Attendance List</mat-card-header>
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-default">
+        <tr>
+          <th>Employee ID</th>
+          <th>Attendance Date</th>
+          <th>Attendance Type</th>
+          <th>Overtime Hour</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="attendanceList.length === 0">
+        <tr>
+          <td colspan="5">There are no attendace in the DB. Add a new attendace below.</td>
+        </tr>
+      </tbody>
+      <tbody *ngIf="attendanceList.length>0">
+        <tr *ngFor="let emp of attendanceList">
+          <td>{{emp.employeeID}}</td>
+          <td>{{emp.attendDate | date: 'dd/MM/yyyy'}}</td>
+          <td>
+            <span *ngIf="emp.attendType==1">Half Day</span>
+            <span *ngIf="emp.attendType==2">Full Day</span>
+          </td>
+          <td>{{emp.overTimeHour}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>

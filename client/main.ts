@@ -3,11 +3,11 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+import 'hammerjs';
 
 if (environment.production) {
   enableProdMode();
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule)
-  .then((success: any) => console.log('App bootstrapped'))
-  .catch((err: any) => console.error(err));
+  .catch(err => console.log(err));

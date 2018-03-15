@@ -1,0 +1,69 @@
+<app-loading [condition]="isLoading"></app-loading>
+<app-toast [message]="toast.message"></app-toast>
+
+<mat-card>
+  <mat-card-header>Add new employess</mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="addEmployeeForm" (ngSubmit)="addEmployess()">
+
+      <mat-form-field>
+        <input matInput placeholder="Employee ID" name="employeeID" formControlName="employeeID">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Shift Start Time" name="shiftStartTime" formControlName="shiftStartTime">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Shift End Time" name="shiftEndTime" formControlName="shiftEndTime">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Over Time Amount Per Hour" name="overTimeAmountPerHour" formControlName="overTimeAmountPerHour">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Salary" name="Monthly Salary" formControlName="salary">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="!addEmployeeForm.valid">Add</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>Employee List</mat-card-header>
+  <mat-card-content>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-default">
+        <tr>
+          <th>Employee ID</th>
+          <th>Shift Start</th>
+          <th>Shift End</th>
+          <th>Overtime Amount Per Hour</th>
+          <th>Salary</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="employeeList.length === 0">
+        <tr>
+          <td colspan="6">There are no employee in the DB. Add a new employee below.</td>
+        </tr>
+      </tbody>
+      <tbody *ngIf="employeeList.length>0">
+        <tr *ngFor="let emp of employeeList">
+          <td>{{emp.employeeID}}</td>
+          <td>{{emp.shiftStartTime}}</td>
+          <td>{{emp.shiftEndTime}}</td>
+          <td>{{emp.overTimeAmountPerHour}}</td>
+          <td>{{emp.salary}}</td>
+          <td>
+            <button class="btn btn-sm btn-warning" (click)="enableEditing(emp)">
+              <i class="fa fa-pencil"></i> Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteEmployee(emp)">
+              <i class="fa fa-trash"></i> Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>

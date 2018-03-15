@@ -1,0 +1,73 @@
+<app-loading [condition]="isLoading"></app-loading>
+<app-toast [message]="toast.message"></app-toast>
+
+<mat-card>
+  <mat-card-header>Add new attendace</mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="addAttendanceForm" (ngSubmit)="addAttendance()">
+
+      <mat-form-field>
+        <mat-select placeholder="Employee ID" name="employeeID" formControlName="employeeID">
+          <mat-option *ngFor="let emp of employeeList" [value]="emp.employeeID">
+            {{ emp.employeeID }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [matDatepicker]="attendDate" placeholder="Choose a attendance date" formControlName="attendDate">
+        <mat-datepicker-toggle matSuffix [for]="attendDate"></mat-datepicker-toggle>
+        <mat-datepicker #attendDate></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Attendance Type" name="attendType" formControlName="attendType">
+          <mat-option *ngFor="let attType of attendTypeList" [value]="attType.value">
+            {{ attType.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Over Time Hour" name="overTimeHour" formControlName="overTimeHour">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="!addAttendanceForm.valid">Add</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>Attendance List</mat-card-header>
+  <mat-card-content>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-default">
+        <tr>
+          <th>Employee ID</th>
+          <th>Attendance Date</th>
+          <th>Attendance Type</th>
+          <th>Overtime Hour</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="attendanceList.length === 0">
+        <tr>
+          <td colspan="5">There are no attendace in the DB. Add a new attendace below.</td>
+        </tr>
+      </tbody>
+      <tbody *ngIf="attendanceList.length>0">
+        <tr *ngFor="let emp of attendanceList">
+          <td>{{emp.employeeID}}</td>
+          <td>{{emp.attendDate | date: 'dd/MM/yyyy'}}</td>
+          <td>{{emp.attendType}}</td>
+          <td>{{emp.overTimeHour}}</td>
+          <td>
+            <button class="btn btn-sm btn-warning" (click)="enableEditing(emp)">
+              <i class="fa fa-pencil"></i> Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteAttendance(emp)">
+              <i class="fa fa-trash"></i> Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>
