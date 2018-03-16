@@ -28,5 +28,8 @@ Other tools and technologies used:
 2. `npm run dev`: concurrently execute MongoDB, Angular build, TypeScript compiler and Express server.
 3. `npm run prod`: run the project with a production bundle and AOT compilation
 
+## Preview
+![Preview](https://raw.githubusercontent.com/mdshohelrana/mean-stack/master/demo.gif "Preview")
+
 ## Author
 * [Shohel Rana](https://github.com/mdshohelrana)
