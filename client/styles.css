@@ -21,7 +21,7 @@ a:hover {
 }
 
 .app-container {
-    position: absolute;
+    position: absolute !important;
     top: 60px;
     bottom: 60px;
     left: 0;
