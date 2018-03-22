@@ -10,7 +10,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import {
   AttendanceService, UserService, AuthService,
   AuthGuardLogin, AuthGuardAdmin, EmployeeService,
-  AppGlobals
+  AppGlobals, BaseService
 } from './shared/services';
 
 import { AppComponent } from './app.component';
@@ -57,7 +57,8 @@ import { AttendanceReportComponent } from './attendance-report/attendance-report
     AttendanceService,
     UserService,
     EmployeeService,
-    AppGlobals
+    AppGlobals,
+    BaseService
   ],
   // schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

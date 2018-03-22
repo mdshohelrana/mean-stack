@@ -5,3 +5,4 @@ export * from './attendance.service';
 export * from './user.service';
 export * from './employee.service';
 export * from './app-globals';
+export * from './base.service';
