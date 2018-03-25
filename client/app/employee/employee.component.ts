@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
-import { EmployeeService } from '../shared/services';
+import { EmployeeService } from '../employee/employee.service';
 import { ToastComponent } from '../shared/toast/toast.component';
 
 @Component({

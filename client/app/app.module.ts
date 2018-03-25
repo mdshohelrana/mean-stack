@@ -7,9 +7,11 @@ import { MaterialModule } from './shared/modules';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { JwtModule } from '@auth0/angular-jwt';
+import { AttendanceService } from './attendances/attendance.service';
+import { EmployeeService } from './employee/employee.service';
 import {
-  AttendanceService, UserService, AuthService,
-  AuthGuardLogin, AuthGuardAdmin, EmployeeService,
+  UserService, AuthService,
+  AuthGuardLogin, AuthGuardAdmin,
   AppGlobals, BaseService
 } from './shared/services';
 

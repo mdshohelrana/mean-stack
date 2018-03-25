@@ -3,7 +3,7 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import { BaseService } from '../services/base.service';
+import { BaseService } from '../shared/services';
 
 @Injectable()
 export class AttendanceService {
@@ -23,20 +23,20 @@ export class AttendanceService {
     return this.baseService.count(this.saveUrl + '/count').map(res => res.json());
   }
 
-  addAttendance(cat): Observable<any> {
-    return this.http.post('/api/attendance', JSON.stringify(cat), this.options);
+  addAttendance(attendance: any): Observable<any> {
+    return this.http.post('/api/attendance', JSON.stringify(attendance), this.options);
   }
 
-  getAttendance(cat): Observable<any> {
-    return this.http.get(`/api/attendance/${cat._id}`).map(res => res.json());
+  getAttendance(attendance: any): Observable<any> {
+    return this.http.get(`/api/attendance/${attendance._id}`).map(res => res.json());
   }
 
-  editAttendance(cat): Observable<any> {
-    return this.http.put(`/api/attendance/${cat._id}`, JSON.stringify(cat), this.options);
+  editAttendance(attendance: any): Observable<any> {
+    return this.http.put(`/api/attendance/${attendance._id}`, JSON.stringify(attendance), this.options);
   }
 
-  deleteAttendance(cat): Observable<any> {
-    return this.http.delete(`/api/attendance/${cat._id}`, this.options);
+  deleteAttendance(attendance: any): Observable<any> {
+    return this.http.delete(`/api/attendance/${attendance._id}`, this.options);
   }
 
 }

@@ -24,7 +24,7 @@ export class BaseService {
 
   // add
   add(url: any, entity: any): Observable<any> {
-    return this.http.post('/api/user', JSON.stringify(entity), this.options);
+    return this.http.post(url, JSON.stringify(entity), this.options);
   }
 
   // Get by id

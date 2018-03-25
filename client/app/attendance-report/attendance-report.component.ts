@@ -3,7 +3,8 @@ import { Http } from '@angular/http';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material';
 
-import { AttendanceService, EmployeeService } from '../shared/services';
+import { AttendanceService } from '../attendances/attendance.service';
+import { EmployeeService } from '../employee/employee.service';
 import { ToastComponent } from '../shared/toast/toast.component';
 
 @Component({
