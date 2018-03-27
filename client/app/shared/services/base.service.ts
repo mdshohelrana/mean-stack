@@ -29,17 +29,17 @@ export class BaseService {
 
   // Get by id
   getById(url: any, entity: any): Observable<any> {
-    return this.http.get(url + `${entity._id}`).map(res => res.json());
+    return this.http.get(url + `/${entity._id}`).map(res => res.json());
   }
 
   // Update by id
   editById(url: any, entity: any): Observable<any> {
-    return this.http.put(url + `${entity._id}`, JSON.stringify(entity), this.options);
+    return this.http.put(url + `/${entity._id}`, JSON.stringify(entity), this.options);
   }
 
   // Delete by id
   deleteById(url: any, entity: any): Observable<any> {
-    return this.http.delete(url + `${entity._id}`, this.options);
+    return this.http.delete(url + `/${entity._id}`, this.options);
   }
 
 }

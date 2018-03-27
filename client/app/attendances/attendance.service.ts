@@ -8,12 +8,10 @@ import { BaseService } from '../shared/services';
 @Injectable()
 export class AttendanceService {
 
-  private headers = new Headers({ 'Content-Type': 'application/json', 'charset': 'UTF-8' });
-  private options = new RequestOptions({ headers: this.headers });
   private getUrl = '/api/attendances';
   private saveUrl = '/api/attendance';
 
-  constructor(private http: Http, private baseService: BaseService) { }
+  constructor(private baseService: BaseService) { }
 
   getAttendances(): Observable<any> {
     return this.baseService.getAll(this.getUrl);
@@ -24,19 +22,19 @@ export class AttendanceService {
   }
 
   addAttendance(attendance: any): Observable<any> {
-    return this.http.post('/api/attendance', JSON.stringify(attendance), this.options);
+    return this.baseService.add(this.saveUrl, attendance);
   }
 
   getAttendance(attendance: any): Observable<any> {
-    return this.http.get(`/api/attendance/${attendance._id}`).map(res => res.json());
+    return this.baseService.getById(this.saveUrl, attendance).map(res => res.json());
   }
 
   editAttendance(attendance: any): Observable<any> {
-    return this.http.put(`/api/attendance/${attendance._id}`, JSON.stringify(attendance), this.options);
+    return this.baseService.editById(this.saveUrl, attendance);
   }
 
   deleteAttendance(attendance: any): Observable<any> {
-    return this.http.delete(`/api/attendance/${attendance._id}`, this.options);
+    return this.baseService.deleteById(this.saveUrl, attendance);
   }
 
 }
