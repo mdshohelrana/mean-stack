@@ -31,7 +31,7 @@ db.once('open', () => {
   });
 
   app.listen(app.get('port'), () => {
-    console.log('Angular Full Stack listening on port ' + app.get('port'));
+    console.log('Mean Stack listening on port ' + app.get('port'));
   });
 
 });
