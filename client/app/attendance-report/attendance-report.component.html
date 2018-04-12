@@ -1,6 +1,8 @@
 <app-loading [condition]="isLoading"></app-loading>
 <mat-card>
-  <mat-card-header>Attendance List</mat-card-header>
+  <mat-card-header>
+    Attendance List
+  </mat-card-header>
   <mat-card-content>
     <mat-form-field>
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
